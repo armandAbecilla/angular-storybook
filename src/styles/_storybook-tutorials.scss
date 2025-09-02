@@ -207,3 +207,28 @@
   vertical-align: top;
   max-width: 100%;
 }
+
+// This can be deleted when the tutorials are done
+@forward "./styles/storybook-tutorials";
+
+// For loaders -- also on tutorial component
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
