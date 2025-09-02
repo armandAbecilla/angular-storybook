@@ -1,8 +1,24 @@
+@use "sass:map";
 @use "variables" as *;
 
-// Mixin with custom name
+// Mixin for media queries, similar to bootsrap @media-breakpoint-$size
 @mixin media-up($breakpoint) {
-  @media (min-width: map-get($viewport-sizes, $breakpoint)) {
+  @media (min-width: map.get($viewport-sizes, $breakpoint)) {
     @content;
+  }
+}
+
+// Mixin for container css, similar to bootstrap @media-breakpoint-$size but for containers
+@mixin media-container-up($breakpoint, $container-name: null) {
+  $size: map.get($viewport-sizes, $breakpoint);
+
+  @if $container-name == null or $container-name == "" {
+    @container (min-width: #{$size}) {
+      @content;
+    }
+  } @else {
+    @container #{unquote($container-name)} (min-width: #{$size}) {
+      @content;
+    }
   }
 }

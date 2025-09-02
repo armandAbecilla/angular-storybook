@@ -2,6 +2,61 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "ProfileBanner",
+            "id": "interface-ProfileBanner-1760073a653c790a756804580c42993be51a5151b5731e80d9265a8b1060ada8cf3d41f3b0162afc50379df5ad4277e4379d9e05102a8c209c9685452f266168",
+            "file": "src/app/models/banners.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ProfileBanner {\n  name: string;\n  description: string;\n  bannerImageCover?: string;\n  bannerImage?: string;\n}\n",
+            "properties": [
+                {
+                    "name": "bannerImage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "bannerImageCover",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "Task",
             "id": "interface-Task-65fb90e4dc34d2734d4f266a9debe7f309cfdead4dabb2d9ae04d2644286a44dacb5bed4eefc28d89fdd07e80e4db044ff0f4172241de360b28eedb128cc15b8",
             "file": "src/app/models/task.model.ts",
@@ -772,7 +827,7 @@
         },
         {
             "name": "ProfileBannerComponent",
-            "id": "component-ProfileBannerComponent-b4db72fa2e31b919741f46667b9e86d95cac4d76c91b2cb2f6545c0bb14b408996f17b4ca00fe70053e791b6b62065421f4aba607164de047729b1a23845d824",
+            "id": "component-ProfileBannerComponent-6cf3d9ad255f5eea4de6da87ec148bec4c2e0eda26924970ec26f67ee0a3067f7abf7a410f331c25d5d3bb6d652592873d668ef44285f0d14d72db136b4bf6d7",
             "file": "src/app/components/profile-banner/profile-banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -789,9 +844,33 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": true
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": true
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -802,12 +881,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-banner',\n  imports: [],\n  templateUrl: './profile-banner.component.html',\n  styles: ``\n})\nexport class ProfileBannerComponent {\n\n}\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\nimport { ProfileBanner } from 'src/app/models/banners.model';\n\n@Component({\n  selector: 'app-profile-banner',\n  imports: [],\n  templateUrl: './profile-banner.component.html',\n  styles: ``,\n})\nexport class ProfileBannerComponent {\n  data = input.required<ProfileBanner>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n",
             "extends": [],
-            "templateData": "<p>profile-banner works!</p>\n"
+            "templateData": "<section class=\"profile-banner\">\n  <div class=\"profile-banner__image-cover\">\n    <img [src]=\"data().bannerImageCover\" alt=\"Profile Image Cover\" />\n  </div>\n\n  <div class=\"profile-banner__content\">\n    <div class=\"profile-banner__image\">\n      <img [src]=\"data().bannerImage\" alt=\"Profile Image\" />\n    </div>\n    <div class=\"profile-banner__info\">\n      <h1 class=\"name\">{{ data().name }}</h1>\n      <span class=\"short-description\">{{ data().description }}</span>\n    </div>\n  </div>\n</section>\n"
         },
         {
             "name": "PureInboxScreenComponent",
@@ -1544,7 +1623,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -1591,7 +1670,7 @@
                 "linktype": "component",
                 "name": "ProfileBannerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1638,6 +1717,15 @@
                 "coveragePercent": 40,
                 "coverageCount": "2/5",
                 "status": "medium"
+            },
+            {
+                "filePath": "src/app/models/banners.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ProfileBanner",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
             },
             {
                 "filePath": "src/app/models/task.model.ts",
