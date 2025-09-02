@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/angular';
 
 import { fn } from '@storybook/test';
 
-import { TaskComponent } from './task.component';
 import { Task } from 'src/models/task.model';
+import { TaskComponent } from './task.component';
 
 export const ActionsData = {
   onArchiveTask: fn(),

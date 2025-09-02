@@ -1,36 +1,34 @@
-import { Component, computed, input, output } from '@angular/core';
-import { TaskComponent } from 'src/app/components/task/task.component';
-import { Task } from 'src/models/task.model';
+import { AsyncPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { PureTaskListComponent } from 'src/app/components/pure-task-list/pure-task-list.component';
+import { ArchiveTask, PinTask } from 'src/app/state/task.state';
 
 @Component({
   selector: 'app-task-list',
-  imports: [TaskComponent],
+  imports: [PureTaskListComponent, AsyncPipe],
   templateUrl: './task-list.component.html',
   styles: ``,
 })
 export class TaskListComponent {
-  tasks = input<Task[]>([]);
-  loading = input<boolean>();
-  onPinTask = output();
-  onArchiveTask = output();
+  tasks$?: Observable<any>;
 
-  // reorder: pinned first
-  initialTasks = computed(() => [
-    ...this.tasks().filter((t) => t.state === 'TASK_PINNED'),
-    ...this.tasks().filter((t) => t.state !== 'TASK_PINNED'),
-  ]);
+  constructor(private store: Store) {
+    this.tasks$ = store.select((state) => state.taskbox.tasks);
+  }
 
-  // keep only inbox or pinned
-  filteredTasks = computed(() =>
-    this.initialTasks().filter(
-      (t) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED',
-    ),
-  );
+  /**
+   * Component method to trigger the archiveTask event
+   */
+  archiveTask(id: string) {
+    this.store.dispatch(new ArchiveTask(id));
+  }
 
-  // final result (same filter again as in your original setter)
-  tasksInOrder = computed(() =>
-    this.filteredTasks().filter(
-      (t) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED',
-    ),
-  );
+  /**
+   * Component method to trigger the pinTask event
+   */
+  pinTask(id: string) {
+    this.store.dispatch(new PinTask(id));
+  }
 }
