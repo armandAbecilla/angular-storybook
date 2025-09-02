@@ -1,0 +1,8 @@
+@use "variables" as *;
+
+// Mixin with custom name
+@mixin media-up($breakpoint) {
+  @media (min-width: map-get($viewport-sizes, $breakpoint)) {
+    @content;
+  }
+}

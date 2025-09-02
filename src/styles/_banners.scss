@@ -1,0 +1,107 @@
+@use "variables" as v;
+@use "mixins" as *;
+
+.profile-banner {
+  $base-height-desktop: 370px;
+  $base-height-mobile: 180px;
+  $max-profile-image-size: 230px;
+  container-type: inline-size;
+  container-name: profile-banner;
+
+  position: relative;
+  min-height: $base-height-mobile;
+
+  @include media-up("sm") {
+    padding-bottom: 30px;
+    min-height: $base-height-desktop;
+  }
+
+  &__image-cover {
+    background: v.$primary;
+    width: 100%;
+    height: $base-height-mobile;
+    overflow: hidden;
+
+    @container profile-banner (min-width: 576px ) {
+      position: relative;
+      height: $base-height-desktop;
+    }
+
+    > img {
+      width: 100%;
+      aspect-ratio: 16 /9;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    &:after {
+      display: none;
+      content: "";
+      // im tring to create a gradient here as backdrop
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      top: 230px;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0)
+      );
+
+      @container profile-banner (min-width: 576px ) {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    width: 90%;
+    color: v.$text-on-dark;
+    grid-template-columns: 1fr;
+    margin: -80px auto 0 auto;
+    gap: 0.5rem;
+
+    @container profile-banner (min-width: 576px ) {
+      position: absolute;
+      grid-template-columns: auto 1fr;
+      width: 80%;
+      top: calc($max-profile-image-size + 20px);
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 1rem;
+    }
+  }
+
+  &__image img {
+    max-width: 120px;
+    max-height: $max-profile-image-size;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 100%;
+
+    @container profile-banner (min-width: 576px ) {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    color: v.$text-on-light;
+
+    @container profile-banner (min-width: 576px ) {
+      color: v.$text-on-dark;
+    }
+
+    .name {
+      font-size: clamp(1.5rem, 1.5vw + 0.5rem, 2rem);
+    }
+
+    .short-description {
+      font-size: clamp(0.75rem, 1.5vw + 0.5rem, 1.2rem);
+    }
+  }
+}

@@ -771,6 +771,45 @@
             "templateData": "<app-pure-inbox-screen [error]=\"error$ | async\"></app-pure-inbox-screen>\n"
         },
         {
+            "name": "ProfileBannerComponent",
+            "id": "component-ProfileBannerComponent-b4db72fa2e31b919741f46667b9e86d95cac4d76c91b2cb2f6545c0bb14b408996f17b4ca00fe70053e791b6b62065421f4aba607164de047729b1a23845d824",
+            "file": "src/app/components/profile-banner/profile-banner.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-profile-banner",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "templateUrl": [
+                "./profile-banner.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-banner',\n  imports: [],\n  templateUrl: './profile-banner.component.html',\n  styles: ``\n})\nexport class ProfileBannerComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": [],
+            "templateData": "<p>profile-banner works!</p>\n"
+        },
+        {
             "name": "PureInboxScreenComponent",
             "id": "component-PureInboxScreenComponent-9082fa0b8dfe43680ccbe0aaa45491552023cb51ca1db753b10eb06236b0b61e091b6fc006c7fcd82cc9edfc2a37cdb90aecc42644600cead4f61d436e6e61c2",
             "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.component.ts",
@@ -1542,6 +1581,15 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "ButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/profile-banner/profile-banner.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileBannerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,0 +1,15 @@
+<section class="profile-banner">
+  <div class="profile-banner__image-cover">
+    <img [src]="data().bannerImageCover" alt="Profile Image Cover" />
+  </div>
+
+  <div class="profile-banner__content">
+    <div class="profile-banner__image">
+      <img [src]="data().bannerImage" alt="Profile Image" />
+    </div>
+    <div class="profile-banner__info">
+      <h1 class="name">{{ data().name }}</h1>
+      <span class="short-description">{{ data().description }}</span>
+    </div>
+  </div>
+</section>

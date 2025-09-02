@@ -6,6 +6,7 @@ $secondary: #1f6e65;
 $info: #e9c46a;
 $warning: #cc6d1d;
 $danger: #e76f51;
+$gray: #f5f5f5;
 
 // Text Colors for Contrast
 $text-on-dark: #ffffff;
@@ -20,3 +21,16 @@ $danger-hover: #cc5e47; // slightly darker than $danger
 
 // Base Radius for Borders, box, etc
 $base-radius: 0.25rem;
+
+// Viewport sizes
+$viewport-sizes: (
+  "sm": 576px,
+  // Small: tablets in portrait
+  "md": 768px,
+  // Medium: tablets in landscape
+  "lg": 992px,
+  // Large: small laptops
+  "xl": 1200px,
+  // Extra large: desktops
+  "xxl": 1400px, // Extra extra large: large desktops
+);
