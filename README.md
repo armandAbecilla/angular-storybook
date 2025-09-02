@@ -10,7 +10,7 @@ Welcome to **my personal Angular UI Component Library** — a growing collection
 
 Explore the live documentation of all available components, powered by **Chromatic**:
 
-🔗 **[Visit Angular Components Storybook](https://68b6ac84d755d2c8512cff8e-giffocceub.chromatic.com/)**
+🔗 **[Visit Angular Components Storybook](http://www.chromatic.com/library?appId=68b6ac84d755d2c8512cff8e)**
 
 ---
 
