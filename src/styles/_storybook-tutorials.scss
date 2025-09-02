@@ -1,3 +1,4 @@
+@use "./variables" as v;
 
 .list-heading {
   letter-spacing: 0.3em;
@@ -180,7 +181,7 @@
 }
 
 .page.lists-show nav {
-  background: #d3edf4;
+  background: v.$primary;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
@@ -201,7 +202,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 800;
-  color: #1c3f53;
+  color: v.$text-on-dark;
   display: inline-block;
   vertical-align: top;
   max-width: 100%;

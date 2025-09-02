@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "variables" as v;
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: v.$base-radius;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  color: v.$text-on-light;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: color.adjust($color: #fff, $lightness: -8%);
+  }
+
+  // modifier for button variant
+  &-primary {
+    background: v.$primary;
+    color: v.$text-on-dark;
+
+    &:hover {
+      background: v.$primary-hover;
+    }
+  }
+
+  &-secondary {
+    background: v.$secondary;
+    border-color: v.$secondary;
+    color: v.$text-on-dark;
+
+    &:hover {
+      background: v.$secondary-hover;
+    }
+  }
+
+  &-info {
+    background: v.$info;
+    border-color: v.$info;
+    color: v.$text-on-dark;
+
+    &:hover {
+      background: v.$info-hover;
+    }
+  }
+
+  &-warning {
+    background: v.$warning;
+    border-color: v.$warning;
+    color: v.$text-on-dark;
+
+    &:hover {
+      background: v.$warning-hover;
+    }
+  }
+
+  &-danger {
+    background: v.$danger;
+    border-color: v.$danger;
+    color: v.$text-on-dark;
+
+    &:hover {
+      background: v.$danger-hover;
+    }
+  }
+}

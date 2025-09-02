@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 
 import { fn } from '@storybook/test';
 
-import { Task } from 'src/models/task.model';
+import { Task } from 'src/app/models/task.model';
 import { TaskComponent } from './task.component';
 
 export const ActionsData = {

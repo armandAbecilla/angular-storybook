@@ -1,0 +1,22 @@
+@use "sass:color";
+
+// Base Colors
+$primary: #264653;
+$secondary: #1f6e65;
+$info: #e9c46a;
+$warning: #cc6d1d;
+$danger: #e76f51;
+
+// Text Colors for Contrast
+$text-on-dark: #ffffff;
+$text-on-light: #1d1d1d;
+
+// Shade Variants (for hover/active states)
+$primary-hover: color.adjust($primary, $lightness: -8%); // #1e3741 approx
+$secondary-hover: color.adjust($secondary, $lightness: -8%); // #25867a approx
+$info-hover: #d4b75e; // slightly darker than $info
+$warning-hover: #d18a52; // slightly darker than $warning
+$danger-hover: #cc5e47; // slightly darker than $danger
+
+// Base Radius for Borders, box, etc
+$base-radius: 0.25rem;

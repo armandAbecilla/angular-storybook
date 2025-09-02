@@ -1,11 +1,14 @@
-@use './styles/typography';
-@use './styles/global';
-@use './styles/forms';
-@use './styles/icons';
+@use "./styles/variables";
+@use "./styles/typography";
+@use "./styles/global";
+@use "./styles/forms";
+@use "./styles/icons";
+@use "./styles/buttons";
 
 // This can be deleted when the tutorials are done
-@use './styles/storybook-tutorials';
+@use "./styles/storybook-tutorials";
 
+// For loaders -- also on tutorial component
 @keyframes spin {
   0% {
     transform: rotate(0deg);

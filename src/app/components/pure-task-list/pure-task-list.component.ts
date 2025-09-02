@@ -1,6 +1,6 @@
 import { Component, computed, input, output } from '@angular/core';
 import { TaskComponent } from 'src/app/components/task/task.component';
-import { Task } from 'src/models/task.model';
+import { Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'app-pure-task-list',

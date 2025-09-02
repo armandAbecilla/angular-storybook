@@ -20,6 +20,9 @@
             "outputPath": {
               "base": "dist/taskbox"
             },
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            },
             "index": "src/index.html",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
