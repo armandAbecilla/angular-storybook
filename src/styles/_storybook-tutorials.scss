@@ -1,4 +1,4 @@
-@use "./variables" as v;
+@use "variables" as v;
 
 .list-heading {
   letter-spacing: 0.3em;
@@ -207,9 +207,6 @@
   vertical-align: top;
   max-width: 100%;
 }
-
-// This can be deleted when the tutorials are done
-@forward "./styles/storybook-tutorials";
 
 // For loaders -- also on tutorial component
 @keyframes spin {
